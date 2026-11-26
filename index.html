@@ -87,7 +87,13 @@ input {
   <h2>🎮 O‘yinlarni tanlang</h2>
 
   <div class="games">
-    <button class="game" onclick="openGame('Shaxmat')">
+    function openGame(name) {
+  if (name === "Shaxmat") {
+    window.location.href = "chess.html";
+  } else {
+    alert(name + " bo‘limi tayyorlanmoqda!");
+  }
+}
       ♟️<br>Shaxmat
     </button>
 
