@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SCHOOL ARENA</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 20px;
+      background: #eaf5ef;
+      color: #173c30;
+      font-family: Arial, sans-serif;
+    }
+    header, .card {
+      background: white;
+      border-radius: 22px;
+      padding: 20px;
+      margin-bottom: 16px;
+      box-shadow: 0 5px 20px #00000010;
+    }
+    header { text-align: center; }
+    h1 { color: #16865c; }
+    .games {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+    button {
+      border: 0;
+      border-radius: 18px;
+      padding: 20px 10px;
+      background: #16865c;
+      color: white;
+      font-size: 17px;
+      cursor: pointer;
+    }
+    .game {
+      background: white;
+      color: #173c30;
+      box-shadow: 0 5px 15px #00000012;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>♟ SCHOOL ARENA</h1>
+    <p>Maktab o‘yinlari platformasi</p>
+    <p>MUHAMMAD AL-XORAZMIY MAKTABI</p>
+    <p>BUXORO FILIALI</p>
+  </header>
+
+  <div class="card">
+    <h2>Assalomu alaykum!</h2>
+    <p>Onlayn o‘yinlar va reytinglar maydoniga xush kelibsiz.</p>
+  </div>
+
+  <div class="card">
+    <h2>🎮 O‘yinlarni tanlang</h2>
+    <div class="games">
+      <button class="game" onclick="alert('Shaxmat tez orada!')">♟️<br>Shaxmat</button>
+      <button class="game" onclick="alert('Shashka tez orada!')">⚫<br>Shashka</button>
+      <button class="game" onclick="alert('Tic-Tac-Toe tez orada!')">❌<br>Tic-Tac-Toe</button>
+      <button class="game" onclick="alert('Turnirlar tez orada!')">🏆<br>Turnir</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>🏅 Maktab reytingi</h2>
+    <p>Reytinglar tez orada ko‘rsatiladi.</p>
+  </div>
+</body>
+</html>
