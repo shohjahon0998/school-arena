@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SCHOOL ARENA</title>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 18px;
+  background: #eaf5ef;
+  color: #173c30;
+  font-family: Arial, sans-serif;
+}
+
+header, .card {
+  background: white;
+  border-radius: 22px;
+  padding: 20px;
+  margin-bottom: 16px;
+  box-shadow: 0 5px 20px #00000010;
+}
+
+header { text-align: center; }
+
+h1 { color: #16865c; }
+
+.games {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+button {
+  border: 0;
+  border-radius: 18px;
+  padding: 18px 8px;
+  background: #16865c;
+  color: white;
+  font-size: 17px;
+  cursor: pointer;
+}
+
+.game {
+  background: white;
+  color: #173c30;
+  box-shadow: 0 5px 15px #00000012;
+}
+
+input {
+  width: 100%;
+  padding: 13px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+.status {
+  text-align: center;
+  color: #16865c;
+  font-weight: bold;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>♟ SCHOOL ARENA</h1>
+  <p>Maktab o‘yinlari platformasi</p>
+  <h3>MUHAMMAD AL-XORAZMIY NOMIDAGI</h3>
+  <p>IXTISOSLASHTIRILGAN MAKTAB</p>
+  <p>BUXORO FILIALI</p>
+  <p>9–11-sinflar</p>
+</header>
+
+<div class="card">
+  <h2>Assalomu alaykum!</h2>
+  <p>Maktab o‘yinlari va reytinglar maydoniga xush kelibsiz!</p>
+</div>
+
+<div class="card">
+  <h2>🎮 O‘yinlarni tanlang</h2>
+
+  <div class="games">
+    <button class="game" onclick="openGame('Shaxmat')">
+      ♟️<br>Shaxmat
+    </button>
+
+    <button class="game" onclick="openGame('Shashka')">
+      ⚫<br>Shashka
+    </button>
+
+    <button class="game" onclick="openGame('Tic-Tac-Toe')">
+      ❌<br>Tic-Tac-Toe
+    </button>
+
+    <button class="game" onclick="openGame('Turnir')">
+      🏆<br>Turnir
+    </button>
+  </div>
+</div>
+
+<div class="card">
+  <h2>🏅 Maktab reytingi</h2>
+  <p>O‘yinchilar reytingi tez orada ko‘rsatiladi.</p>
+  <button onclick="showRanking()">Reytingni ko‘rish</button>
+  <div id="ranking"></div>
+</div>
+
+<div class="card">
+  <h2>👤 O‘yinchi profili</h2>
+  <input id="player" placeholder="Ism va familiyangiz">
+  <input id="grade" placeholder="Sinfingiz (masalan, 9-A)">
+  <button onclick="saveProfile()">Profilni saqlash</button>
+  <p id="profile"></p>
+</div>
+
+<div class="card">
+  <h3>Server holati</h3>
+  <p class="status">🟢 Platforma ishlamoqda</p>
+</div>
+
+<script>
+function openGame(name) {
+  alert(name + " bo‘limi tanlandi!");
+}
+
+function saveProfile() {
+  let name = document.getElementById("player").value;
+  let grade = document.getElementById("grade").value;
+
+  if (!name || !grade) {
+    alert("Barcha ma'lumotlarni kiriting!");
+    return;
+  }
+
+  localStorage.setItem("player", name);
+  localStorage.setItem("grade", grade);
+
+  document.getElementById("profile").innerText =
+    "Profil saqlandi: " + name + " | " + grade;
+}
+
+function showRanking() {
+  document.getElementById("ranking").innerHTML =
+    "<p>🏆 Reyting hozircha bo‘sh.</p>";
+}
+</script>
+
+</body>
+</html>
